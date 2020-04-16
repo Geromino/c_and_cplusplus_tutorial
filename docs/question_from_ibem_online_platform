@@ -1,0 +1,32 @@
+
+#define NEGATIVE_VALUE 0
+#define FIRST_ELEMENT_IN_ARRAY 0
+
+int minX(int arr_count, int* arr) {
+    int min_start_value,cnt_element=0,sum_elemet_array=0;
+
+    if (arr[FIRST_ELEMENT_IN_ARRAY]<NEGATIVE_VALUE)
+    {
+    	min_start_value=abs(arr[FIRST_ELEMENT_IN_ARRAY]);
+    }
+    else
+    {
+    	min_start_value=arr[FIRST_ELEMENT_IN_ARRAY];
+    }
+
+    sum_elemet_array+=min_start_value;
+
+    for (cnt_element=0;cnt_element<arr_count;cnt_element++)
+    {
+        sum_elemet_array+=arr[cnt_element];
+        while(sum_elemet_array<1)
+        {
+        	min_start_value++;
+        	sum_elemet_array++;
+        }
+    }
+
+
+
+    return min_start_value;
+}
